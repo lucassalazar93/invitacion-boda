@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Invitación — Juan Carlos & Sandra</title>
+
+    <!-- ===================== -->
+    <!-- FUENTES ELEGANTES -->
+    <!-- ===================== -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&family=Cinzel:wght@700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ===================== -->
+    <!-- HOJAS DE ESTILO MODULARES -->
+    <!-- ===================== -->
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/sobre.css" />
+    <link rel="stylesheet" href="styles/contenido.css" />
+  </head>
+
+  <body>
+    <!-- ========================================================= -->
+    <!-- PANTALLA INICIAL: SOBRE MÁGICO -->
+    <!-- ========================================================= -->
+    <section
+      class="sobre-magico"
+      id="sobreElegante"
+      aria-label="Sobre de invitación"
+    >
+      <div class="vignette" aria-hidden="true"></div>
+      <div class="halo-luz" aria-hidden="true"></div>
+
+      <div class="sobre-caja">
+        <div class="sobre-sombra" aria-hidden="true"></div>
+
+        <div class="sobre-cuerpo" id="sobreCuerpo">
+          <div class="solapa-top"></div>
+          <div class="solapa-left"></div>
+          <div class="solapa-right"></div>
+          <div class="solapa-bottom"></div>
+
+          <!-- Sello metálico 3D -->
+          <button
+            id="selloElegante"
+            class="sello-btn"
+            aria-label="Abrir invitación"
+          >
+            JS
+          </button>
+        </div>
+      </div>
+
+      <p class="texto-abrir">Toca el sello para abrir</p>
+
+      <audio
+        id="sonidoSello"
+        src="assets/audio/plop.mp3"
+        preload="auto"
+      ></audio>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- CONTENIDO INTERIOR: INVITACIÓN -->
+    <!-- ========================================================= -->
+    <main id="contenido" hidden>
+      <!-- HERO -->
+      <section class="hero" aria-label="Portada principal">
+        <img
+          src="assets/img/portada.jpg"
+          alt="Juan Carlos y Sandra"
+          class="hero-img"
+        />
+        <div class="overlay">
+          <h1>Juan Carlos & Sandra</h1>
+          <p>¡Nos casamos!</p>
+          <audio id="musica" controls loop>
+            <source src="assets/audio/musica.mp3" type="audio/mp3" />
+            Tu navegador no soporta audio embebido.
+          </audio>
+        </div>
+      </section>
+
+      <!-- FRASE -->
+      <section class="frase" aria-label="Frase bíblica">
+        <p class="texto-biblico">
+          “Ya no son dos, sino uno solo. Por tanto, lo que Dios ha unido, que no
+          lo separe el hombre.”<br /><span>(Mateo 19:6)</span>
+        </p>
+      </section>
+
+      <!-- CEREMONIA -->
+      <section class="evento" aria-label="Ceremonia">
+        <img
+          src="assets/icons/iglesia.png"
+          alt="Icono iglesia"
+          class="icono-evento"
+        />
+        <h3>Ceremonia Religiosa</h3>
+        <p>Parroquia Santa Ana<br />Parque Principal, Fredonia</p>
+        <p class="hora">27 DIC · 2:00 p.m.</p>
+        <a
+          href="https://maps.app.goo.gl/JSTQrojtmK6NRnhC7"
+          class="boton"
+          target="_blank"
+          >Ver ubicación</a
+        >
+      </section>
+
+      <!-- CELEBRACIÓN -->
+      <section class="evento" aria-label="Celebración">
+        <img
+          src="assets/icons/celebracion.png"
+          alt="Icono celebración"
+          class="icono-evento"
+        />
+        <h3>Celebración</h3>
+        <p>Restaurante “El Desmadre”<br />Fredonia, Antioquia</p>
+        <p class="hora">Después de la ceremonia</p>
+      </section>
+
+      <!-- SUGERENCIA DE REGALOS -->
+      <section class="regalos" aria-label="Regalos">
+        <img
+          src="assets/icons/regalos.png"
+          alt="Icono regalos"
+          class="icono-evento"
+        />
+        <h3>Sugerencia de regalos</h3>
+        <p>
+          Tu presencia es el mejor obsequio. Pero si deseas hacernos un regalo,
+          aquí encontrarás nuestra lista.
+        </p>
+        <a
+          href="https://www.multicenter.com"
+          class="boton"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Ver lista</a
+        >
+      </section>
+
+      <!-- CONFIRMACIÓN -->
+      <section class="confirmacion" aria-label="Confirmar asistencia">
+        <img
+          src="assets/icons/confirmacion.png"
+          alt="Icono confirmación"
+          class="icono-evento"
+        />
+        <h3>Confirmar asistencia</h3>
+        <p>Por favor confirma tu asistencia antes del 10 de diciembre.</p>
+        <a
+          href="https://wa.me/573001112233?text=Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Juan%20Carlos%20y%20Sandra"
+          class="boton"
+          target="_blank"
+          >Confirmar por WhatsApp</a
+        >
+      </section>
+
+      <!-- PIE -->
+      <footer class="footer">
+        <p>
+          Con amor,<br /><strong
+            >Juan Carlos Uribe Hernández & Sandra Cárdenas</strong
+          >
+        </p>
+        <p class="agradecimiento">¡Gracias por acompañarnos en este día!</p>
+      </footer>
+    </main>
+
+    <!-- ========================================================= -->
+    <!-- LIBRERÍAS Y SCRIPT PRINCIPAL -->
+    <!-- ========================================================= -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

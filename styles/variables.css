@@ -1,0 +1,95 @@
+/* =========================================================
+   VARIABLES GLOBALES — Invitación Romántica 3D
+   ========================================================= */
+
+:root {
+  /* ------------------ Paleta principal ------------------ */
+  --color-dorado: #b08b59; /* Dorado clásico */
+  --color-dorado-claro: #f1d58b; /* Reflejos suaves */
+  --color-dorado-oscuro: #8a6a35; /* Sombra metálica */
+  --color-vino: #a06b6b; /* Toque romántico para acentos */
+  --color-fondo: #f7f5f0; /* Fondo principal */
+  --color-fondo-oscuro: #e5dcca; /* Fondo base cálido */
+  --color-texto: #333;
+  --color-texto-secundario: #6b6b6b;
+  --color-blanco: rgba(255, 255, 255, 0.85);
+
+  /* ------------------ Sombra y profundidad ------------------ */
+  --sombra-suave: 0 6px 24px rgba(0, 0, 0, 0.12);
+  --sombra-media: 0 12px 28px rgba(0, 0, 0, 0.18);
+  --sombra-dorada: 0 0 18px rgba(176, 139, 89, 0.45);
+
+  /* ------------------ Bordes y radios ------------------ */
+  --radio-pequeno: 8px;
+  --radio: 16px;
+  --radio-grande: 28px;
+
+  /* ------------------ Tipografía ------------------ */
+  --fuente-titulos: "Playfair Display", serif;
+  --fuente-texto: "Poppins", sans-serif;
+  --fuente-decorativa: "Cinzel", serif;
+
+  /* ------------------ Gradientes ------------------ */
+  --gradiente-dorado: linear-gradient(
+    135deg,
+    #f7e08d 0%,
+    #d8b35d 40%,
+    #a2761c 100%
+  );
+  --gradiente-fondo: radial-gradient(
+    circle at 50% 20%,
+    #fffaf0 0%,
+    #f5ecd6 40%,
+    #e2d2b1 100%
+  );
+
+  /* ------------------ Transiciones globales ------------------ */
+  --transicion-base: all 0.3s ease-in-out;
+  --transicion-lenta: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ------------------ Medidas responsivas ------------------ */
+  --ancho-maximo: 1200px;
+  --padding-global: 1rem 2rem;
+}
+
+/* Reset base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--fuente-texto);
+  color: var(--color-texto);
+  background: var(--gradiente-fondo);
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-dorado-oscuro);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--fuente-texto);
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
