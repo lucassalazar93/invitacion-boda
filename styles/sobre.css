@@ -1,250 +1,277 @@
 /* =========================================================
-   SOBRE MÁGICO — Diseño 3D premium realista
+   SOBRE MÁGICO — Estilo Cobre & Arena (Mobile First)
    ========================================================= */
+:root {
+  --bg-grad-top: #faf6ee;
+  --bg-grad-bottom: #efe5d3;
+  --papel-1: #d5b591;
+  --papel-2: #b88e64;
+  --solapa-1: #d2b899;
+  --solapa-2: #b68a61;
+  --texto: #4b3b2a;
+  --texto-sec: #7b6444;
+  --dorado: #614c25;
+}
 
-/* ---------------- FONDO GENERAL ---------------- */
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  background: radial-gradient(
-      140% 120% at 50% -10%,
-      var(--bg-inner-1) 0%,
-      var(--bg-inner-2) 40%,
-      transparent 60%
-    ),
-    radial-gradient(
-      140% 120% at 50% 120%,
-      #e2c98e 0%,
-      #cbb47d 40%,
-      transparent 70%
-    ),
-    radial-gradient(
-      110% 100% at 50% 50%,
-      var(--bg-outer-2) 0%,
-      var(--bg-outer-1) 100%
-    );
-  background-attachment: fixed;
-  overflow-x: hidden;
-  color: var(--text-1);
+  height: 100%;
 }
 
-/* ---------------- PANTALLA SOBRE ---------------- */
-.sobre-magico {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  padding: 28px 18px;
-  z-index: 9999;
-  transition: opacity 0.9s ease;
-}
-
-/* Viñeta dramática suave */
-.vignette {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  mix-blend-mode: multiply;
+body {
+  margin: 0;
   background: radial-gradient(
-    85% 70% at 50% 35%,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0) 45%,
-    rgba(0, 0, 0, 0.28) 100%
+    circle at center,
+    var(--bg-grad-top) 0%,
+    var(--bg-grad-bottom) 100%
   );
-  opacity: 0.55;
-}
-
-/* Halo dorado respirando detrás del sobre */
-.halo-luz {
-  position: absolute;
-  pointer-events: none;
-  width: min(75vw, 540px);
-  height: min(75vw, 540px);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 215, 130, 0.55),
-    rgba(255, 230, 180, 0.3) 40%,
-    rgba(255, 230, 180, 0) 70%
-  );
-  filter: blur(48px);
-  transform: translateY(-12vh);
-  animation: halo 3.5s ease-in-out infinite alternate;
-  opacity: 0.95;
-}
-@keyframes halo {
-  from {
-    transform: translateY(-12vh) scale(0.95);
-    opacity: 0.75;
-  }
-  to {
-    transform: translateY(-12vh) scale(1.08);
-    opacity: 1;
-  }
-}
-
-/* Caja y sombra del sobre */
-.sobre-caja {
-  position: relative;
-  width: clamp(300px, 82vw, 820px);
-}
-.sobre-sombra {
-  position: absolute;
-  inset: auto 8% -26px 8%;
-  height: 36px;
-  border-radius: 28px;
-  background: radial-gradient(
-    60% 60% at 50% 30%,
-    rgba(0, 0, 0, 0.35),
-    transparent 70%
-  );
-  filter: blur(14px);
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-/* ---------------- CUERPO DEL SOBRE ---------------- */
-.sobre-cuerpo {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  aspect-ratio: 16/10;
-  border-radius: 14px;
+  background-image: url("../assets/img/textura-sobre.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  place-items: center;
   overflow: hidden;
-  isolation: isolate;
-  background: var(--paper-ivory);
-  background-image: var(--texture-url);
-  background-size: 700px 700px;
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.35),
-    0 1px 0 rgba(255, 255, 255, 0.2) inset;
-  perspective: 1400px;
+}
+
+/* Contenedor general */
+.sobre-magico {
+  width: 100%;
+  max-width: 460px;
+  padding: 16px;
+  text-align: center;
+  position: relative;
+}
+
+/* Encabezado */
+.titulo-seccion {
+  margin: 0 0 6px 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.28em;
+  color: var(--texto-sec);
+  text-transform: uppercase;
+}
+
+.nombres-sobre {
+  margin: 4px 0 18px 0;
+  font-family: "Great Vibes", cursive;
+  font-size: 2.4rem;
+  color: var(--texto);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Sobre */
+.sobre-caja {
+  width: 100%;
+  aspect-ratio: 1.35 / 1;
+  position: relative;
+  margin-bottom: 18px;
+  perspective: 800px;
+}
+
+.sobre-cuerpo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: url("../assets/img/textura-sobre.jpg") center/500px repeat,
+    linear-gradient(155deg, var(--papel-1) 0%, var(--papel-2) 100%);
+  background-blend-mode: multiply;
+  box-shadow: 0 18px 28px rgba(0, 0, 0, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.25),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.15);
+  filter: contrast(1.05) brightness(0.97);
   transform-style: preserve-3d;
 }
 
-/* Solapas (con sombras diferenciadas) */
-.solapa-top,
-.solapa-left,
-.solapa-right,
-.solapa-bottom {
+/* Solapas */
+.solapa {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: var(--paper-ivory-2);
-  background-image: var(--texture-url);
-  background-size: 700px 700px;
-  transition: transform 1.1s cubic-bezier(0.65, 0, 0.35, 1);
-  will-change: transform;
+  background: linear-gradient(135deg, var(--solapa-1), var(--solapa-2));
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.3),
+    0 2px 5px rgba(0, 0, 0, 0.25);
 }
 .solapa-top {
-  clip-path: polygon(50% 0%, 100% 0, 0 0);
-  transform-origin: top center;
-  z-index: 4;
-  box-shadow: inset 0 -12px 22px rgba(0, 0, 0, 0.12);
-}
-.solapa-left {
-  clip-path: polygon(50% 50%, 0 0, 0 100%);
-  transform-origin: left center;
-  background: #f5ecdf;
-}
-.solapa-right {
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
-  transform-origin: right center;
-  background: #efe4d2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 .solapa-bottom {
-  clip-path: polygon(50% 50%, 100% 100%, 0 100%);
-  transform-origin: bottom center;
-  background: #fbf2e7;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  clip-path: polygon(0 100%, 100% 100%, 50% 0);
+}
+.solapa-left {
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.solapa-right {
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
 }
 
-/* ---------------- SELLO METÁLICO 3D REALISTA ---------------- */
-.sello-btn {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(66px, 14vw, 120px);
-  height: clamp(66px, 14vw, 120px);
-  border-radius: 50%;
-  border: 4px solid var(--gold-ring);
-  color: var(--gold-text);
-  font-family: "Cinzel", serif;
-  font-weight: 700;
-  font-size: clamp(1.05rem, 3.8vw, 1.8rem);
-  letter-spacing: 0.6px;
-  cursor: pointer;
-  z-index: 10;
-  background: radial-gradient(
-    circle at 30% 25%,
-    #fff9c4 0%,
-    #f7d774 20%,
-    #d4a72c 60%,
-    #8a671b 95%
-  );
-  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.45),
-    inset 3px 3px 8px rgba(255, 255, 255, 0.4),
-    inset -6px -8px 12px rgba(0, 0, 0, 0.35);
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.28);
-  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
-}
-.sello-btn::before {
-  content: "";
-  position: absolute;
-  inset: 3px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0.25),
-    rgba(0, 0, 0, 0.15) 80%
-  );
-  mix-blend-mode: overlay;
-}
-.sello-btn:hover {
-  transform: translate(-50%, -50%) scale(1.08);
-  filter: saturate(1.08);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5),
-    inset 4px 4px 10px rgba(255, 255, 255, 0.45),
-    inset -8px -10px 16px rgba(0, 0, 0, 0.4);
-}
-.sello-btn:active {
-  transform: translate(-50%, -50%) scale(0.94);
-}
-
-/* Brillo animado */
-.sello-btn::after {
+/* Luz ambiental lateral */
+.sobre-caja::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background: linear-gradient(
-    75deg,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(255, 255, 255, 0.65) 48%,
-    rgba(255, 255, 255, 0) 66%
+  background: radial-gradient(
+    circle at 65% 30%,
+    rgba(255, 255, 240, 0.2),
+    transparent 70%
   );
-  transform: translateX(-140%) rotate(8deg);
-  animation: shimmer 4.2s ease-in-out infinite;
-  opacity: 0.45;
+  mix-blend-mode: overlay;
+  pointer-events: none;
 }
-@keyframes shimmer {
-  0% {
-    transform: translateX(-140%) rotate(8deg);
+
+/* Sello */
+.sello-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.sello-btn:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.sello-img {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
+  animation: brillo-dorado 4s ease-in-out infinite;
+}
+.iniciales {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Cinzel", serif;
+  color: #4a3b21;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+}
+
+/* Fecha */
+.fecha-evento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  color: #5a4633;
+}
+.fecha-dia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fecha-dia .dia {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dorado);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+.fecha-dia .anio {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  color: #5a4633;
+}
+
+.texto-abrir {
+  margin: 12px 0 0 0;
+  font-size: 0.95rem;
+  color: #6e5740;
+  opacity: 0.85;
+  animation: parpadeo 2.5s ease-in-out infinite;
+}
+
+/* Animaciones del brillo y parpadeo */
+@keyframes parpadeo {
+  0%,
+  100% {
+    opacity: 0.9;
   }
   50% {
-    transform: translateX(20%) rotate(8deg);
+    opacity: 0.4;
   }
+}
+@keyframes brillo-dorado {
+  0%,
   100% {
-    transform: translateX(140%) rotate(8deg);
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45)) brightness(1)
+      saturate(1);
+  }
+  50% {
+    filter: drop-shadow(0 4px 8px rgba(255, 215, 100, 0.5)) brightness(1.15)
+      saturate(1.05);
   }
 }
 
-/* Texto indicativo */
-.texto-abrir {
-  margin-top: 12px;
-  text-align: center;
-  font-size: clamp(0.95rem, 3.6vw, 1.05rem);
-  color: var(--text-2);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+/* Estado ABRIENDO: animación de solapas y sello */
+.sobre-magico.abriendo .sello-btn {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.1);
+}
+.sobre-magico.abriendo .solapa-top {
+  transform: translateY(-120%);
+  opacity: 0;
+}
+.sobre-magico.abriendo .solapa-left {
+  transform: translateX(-120%);
+  opacity: 0;
+}
+.sobre-magico.abriendo .solapa-right {
+  transform: translateX(120%);
+  opacity: 0;
+}
+.sobre-magico.abriendo .solapa-bottom {
+  transform: translateY(120%);
+  opacity: 0;
+}
+
+/* =======================
+   Responsive
+   ======================= */
+@media (min-width: 420px) {
+  .nombres-sobre {
+    font-size: 2.8rem;
+  }
+  .sello-img {
+    width: 92px;
+    height: 92px;
+  }
+}
+@media (min-width: 768px) {
+  .nombres-sobre {
+    font-size: 3rem;
+  }
+  .sello-img {
+    width: 100px;
+    height: 100px;
+  }
 }

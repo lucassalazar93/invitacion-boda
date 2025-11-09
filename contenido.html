@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Invitación digital de boda — Juan Carlos & Sandra. Acompáñanos a celebrar nuestro gran día con amor y alegría."
+    />
+    <meta name="theme-color" content="#faf6ee" />
+    <title>Invitación — Juan Carlos & Sandra</title>
+
+    <!-- Fuentes y Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles/contenido.css" />
+  </head>
+
+  <body>
+    <main class="invitacion">
+      <!-- PORTADA -->
+      <section class="portada">
+        <img
+          src="assets/img/portada.jpg"
+          alt="Anillos de boda — Juan Carlos y Sandra"
+          class="portada-img"
+          loading="eager"
+        />
+        <div class="overlay">
+          <h1 class="nombres">Juan Carlos & Sandra</h1>
+          <p class="frase">¡Nos casamos!</p>
+
+          <!-- CONTROLADOR DE MÚSICA -->
+          <div class="music-player">
+            <audio id="musica" loop preload="auto">
+              <source src="assets/audio/musica.mp3" type="audio/mp3" />
+            </audio>
+
+            <div class="player-header">
+              <span class="material-icons-outlined control-icon" id="playPause">
+                play_arrow
+              </span>
+              <div class="barra">
+                <input
+                  id="progreso"
+                  type="range"
+                  value="0"
+                  min="0"
+                  max="100"
+                  step="1"
+                  aria-label="Progreso de música"
+                />
+              </div>
+              <span class="material-icons-outlined control-icon" id="volumen">
+                volume_up
+              </span>
+            </div>
+
+            <p class="track-name">“Un Pacto Con Dios”</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTADOR -->
+      <section class="contador-seccion" aria-labelledby="titulo-contador">
+        <h3 id="titulo-contador">Faltan para nuestro gran día</h3>
+        <div id="contador" class="contador">
+          <div class="flip-box">
+            <div class="flip" id="dias">
+              <div class="flip-card">
+                <div class="top">00</div>
+                <div class="bottom">00</div>
+              </div>
+            </div>
+            <p class="flip-label">días</p>
+          </div>
+
+          <div class="flip-box">
+            <div class="flip" id="horas">
+              <div class="flip-card">
+                <div class="top">00</div>
+                <div class="bottom">00</div>
+              </div>
+            </div>
+            <p class="flip-label">horas</p>
+          </div>
+
+          <div class="flip-box">
+            <div class="flip" id="minutos">
+              <div class="flip-card">
+                <div class="top">00</div>
+                <div class="bottom">00</div>
+              </div>
+            </div>
+            <p class="flip-label">minutos</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FRASE BÍBLICA -->
+      <section class="frase-biblica" aria-label="Frase bíblica">
+        <p class="texto">
+          “El amor es paciente, es bondadoso. No es envidioso ni jactancioso, no
+          se irrita, no guarda rencor... Todo lo soporta, todo lo cree, todo lo
+          espera, todo lo aguanta.”
+          <br />
+          <span>(1 Corintios 13)</span>
+        </p>
+      </section>
+
+      <!-- CEREMONIA -->
+      <section class="seccion" aria-labelledby="titulo-ceremonia">
+        <img
+          src="assets/icons/iglesia.png"
+          alt="Ícono de iglesia"
+          class="icono"
+          loading="lazy"
+        />
+        <h3 id="titulo-ceremonia">Ceremonia Religiosa</h3>
+        <p>Parroquia Santa Ana<br />Parque Principal, Fredonia</p>
+        <p class="hora">27 DIC · 2:00 p.m.</p>
+        <a
+          href="https://maps.app.goo.gl/JSTQrojtmK6NRnhC7"
+          class="boton"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Ver ubicación</a
+        >
+      </section>
+
+      <!-- CELEBRACIÓN -->
+      <section class="seccion" aria-labelledby="titulo-celebracion">
+        <img
+          src="assets/icons/celebracion.png"
+          alt="Ícono de copas de celebración"
+          class="icono"
+          loading="lazy"
+        />
+        <h3 id="titulo-celebracion">Recepción & Cena</h3>
+        <p>Restaurante “El Desmadre”<br />Fredonia, Antioquia</p>
+        <p class="hora">Después de la ceremonia</p>
+      </section>
+
+      <!-- REGALOS -->
+      <section class="seccion regalos" aria-labelledby="titulo-regalos">
+        <img
+          src="assets/icons/regalos.png"
+          alt="Ícono de regalo"
+          class="icono"
+          loading="lazy"
+        />
+        <h3 id="titulo-regalos">Lluvia de Sobres</h3>
+        <p>
+          Tu presencia es el mejor regalo, pero si deseas contribuir con un
+          detalle, será recibido con mucho cariño.
+        </p>
+      </section>
+
+      <!-- CONFIRMACIÓN -->
+      <section
+        class="seccion confirmacion"
+        aria-labelledby="titulo-confirmacion"
+      >
+        <img
+          src="assets/icons/confirmacion.png"
+          alt="Ícono de confirmación"
+          class="icono"
+          loading="lazy"
+        />
+        <h3 id="titulo-confirmacion">Confirmar Asistencia</h3>
+        <p>Por favor confirma antes del 10 de diciembre.</p>
+        <a
+          href="https://forms.gle/3Qq5jRohQwc9N3cP8"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="boton boton-dorado"
+          >Formulario de confirmación</a
+        >
+      </section>
+
+      <!-- PIE -->
+      <footer class="footer" aria-label="Pie de página">
+        <p>Con amor,<br /><strong>Juan Carlos & Sandra</strong></p>
+        <p class="agradecimiento">Gracias por acompañarnos en este día.</p>
+      </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="componentes/contador.js" defer></script>
+    <script src="componentes/musica.js" defer></script>
+  </body>
+</html>
